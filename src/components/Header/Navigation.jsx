@@ -1,23 +1,28 @@
+import { Link, NavLink } from "react-router";
 import Container from "../Layout/Container";
+import { linkData } from "../../data";
+import Button from "../UI/Button";
+import Input from "../UI/Input";
 
 const Navigation = () => {
   return (
     <Container>
       <nav className="flex justify-between items-center p-3">
         <div className="flex gap-10 items-center">
-          <div className="text-4xl font-semibold">Hekto</div>
+          <div className="text-4xl font-semibold text-pink-500">
+            <Link to={"/"}>Hekto</Link>
+          </div>
           <ul className="flex gap-5 items-center">
-            <li>Home</li>
-            <li>Pages</li>
-            <li>Producs</li>
-            <li>Blog</li>
-            <li>Shop</li>
-            <li>Contact</li>
+            {linkData.map((link) => (
+              <NavLink to={link.url} className="hover:text-pink-500">
+                {link.name}
+              </NavLink>
+            ))}
           </ul>
         </div>
-        <form>
-          <input type="search" />
-          <button>Search</button>
+        <form className="flex gap-3">
+          <Input type={"search"} placeholder={"Search..."} />
+          <Button text={"Search"} />
         </form>
       </nav>
     </Container>

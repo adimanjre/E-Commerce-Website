@@ -1,12 +1,28 @@
 
 import './App.css'
+import Header from './components/Header'
+import RootLayout from './components/Layout'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element:<RootLayout/>,
+    children:[
+      {
+        path:'/login',
+        element:<>login</>
+      }
+    ]
+  }
+])
 
 function App() {
 
   return (
-    <>
-      <h1 className='text-center'>hello</h1>
-    </>
+    <RouterProvider router={router}>
+
+    </RouterProvider>
   )
 }
 

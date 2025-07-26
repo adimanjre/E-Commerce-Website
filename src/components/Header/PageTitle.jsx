@@ -5,7 +5,7 @@ export const BreadCrumb = ({ data }) => {
   return (
     <ul className="flex gap-3 mt-2 text-gray-500">
       {data.map((link) => (
-        <li>
+        <li key={link.name}>
           {link.isActive ? (
             <span>{link.name}</span>
           ) : (
@@ -25,7 +25,7 @@ export const BreadCrumb = ({ data }) => {
 const PageTitle = () => {
   return (
     <Container sectionClass={"bg-purple-50"}>
-      <div className="px-3 py-12">
+      <div className="py-12">
         <h1 className="text-4xl font-bold">Shop</h1>
         <BreadCrumb
           data={[

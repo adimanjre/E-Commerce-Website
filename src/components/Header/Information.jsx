@@ -23,7 +23,7 @@ export const InfoLink = ({ url, icon, text }) => {
 const Information = () => {
   return (
     <Container sectionClass="bg-purple-600 text-white">
-      <div className="flex justify-between items-center p-3">
+      <div className="flex justify-between items-center py-3">
         <ul className="flex gap-5 items-center">
           <ContactInfo icon={<Email />}>
             <a href="mailto:mhhasanul@gmail.com">mhhasanul@gmail.com</a>

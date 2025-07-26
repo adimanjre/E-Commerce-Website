@@ -7,14 +7,18 @@ import Input from "../UI/Input";
 const Navigation = () => {
   return (
     <Container>
-      <nav className="flex justify-between items-center p-3">
+      <nav className="flex justify-between items-center py-3">
         <div className="flex gap-10 items-center">
           <div className="text-4xl font-semibold text-pink-500">
             <Link to={"/"}>Hekto</Link>
           </div>
           <ul className="flex gap-5 items-center">
             {linkData.map((link) => (
-              <NavLink to={link.url} className="hover:text-pink-500">
+              <NavLink
+                to={link.url}
+                key={link.name}
+                className="hover:text-pink-500"
+              >
                 {link.name}
               </NavLink>
             ))}

@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export const BreadCrumb = ({ data }) => {
   return (
-    <ul className="flex gap-3 mt-2 text-gray-500">
+    <ul className="flex gap-3 mt-1 text-gray-500">
       {data.map((link) => (
         <li key={link.name}>
           {link.isActive ? (
@@ -25,8 +25,8 @@ export const BreadCrumb = ({ data }) => {
 const PageTitle = () => {
   return (
     <Container sectionClass={"bg-purple-50"}>
-      <div className="py-12">
-        <h1 className="text-4xl font-bold">Shop</h1>
+      <div className="py-5">
+        <h1 className="text-3xl font-bold">Shop</h1>
         <BreadCrumb
           data={[
             {

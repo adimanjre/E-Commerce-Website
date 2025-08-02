@@ -3,6 +3,7 @@ import Input from "../UI/Input";
 import Container from "../Layout/Container";
 import { Link } from "react-router";
 import Button from "../UI/Button";
+import PartnerLogos from "../PartnerLogos";
 
 const Login = () => {
   return (
@@ -34,7 +35,14 @@ const Login = () => {
             </div>
           </div>
         </form>
+        <p className="text-center mt-5">
+          Don't have an account?{" "}
+          <Link to={"/"} className="text-purple-500">
+            Create Account
+          </Link>
+        </p>
       </div>
+      <PartnerLogos />
     </Container>
   );
 };

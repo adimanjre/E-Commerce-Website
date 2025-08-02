@@ -35,14 +35,18 @@ const Information = () => {
         <ul className="flex gap-5 items-center">
           <li>
             <select className="cursor-pointer">
-              <option className="text-black">English</option>
+              <option selected className="text-black">
+                English
+              </option>
               <option className="text-black">Hindi</option>
               <option className="text-black">Marathi</option>
             </select>
           </li>
           <li>
             <select className="cursor-pointer">
-              <option className="text-black">USD</option>
+              <option selected className="text-black">
+                USD
+              </option>
               <option className="text-black">INR</option>
               <option className="text-black">JBP</option>
             </select>

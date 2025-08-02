@@ -3,13 +3,14 @@ import Container from "../Layout/Container";
 import { linkData } from "../../data";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
+import { Search } from "../Svg/icon";
 
 const Navigation = () => {
   return (
     <Container>
       <nav className="flex justify-between items-center py-3">
         <div className="flex gap-10 items-center">
-          <div className="text-4xl font-semibold text-pink-500">
+          <div className="text-3xl font-semibold text-pink-500">
             <Link to={"/"}>Hekto</Link>
           </div>
           <ul className="flex gap-5 items-center">
@@ -26,7 +27,7 @@ const Navigation = () => {
         </div>
         <form className="flex gap-3">
           <Input type={"search"} placeholder={"Search..."} />
-          <Button text={"Search"} />
+          <Button text={<Search />} />
         </form>
       </nav>
     </Container>

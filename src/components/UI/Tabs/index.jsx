@@ -1,14 +1,13 @@
 import TabLink from "./TabLink";
-import { tabbedProducts } from "../../../data";
 import ProductCard from "../../UI/ProductCard";
 import { useState } from "react";
 
-const Tab = () => {
+const Tab = ({ tabList }) => {
   const [activeTab, setActiveTab] = useState({
-    index: 0,
-    tabName: tabbedProducts[0].tab,
+    index: tabList[0].tabId,
+    tabName: tabList[0].tabName,
   });
-  const activeTabPane = tabbedProducts[activeTab.index];
+  const ActiveTabPane = tabList[activeTab.index].tabPane;
 
   const handleTabClick = (name, index) => {
     setActiveTab((prev) => {
@@ -21,21 +20,17 @@ const Tab = () => {
   return (
     <>
       <div className="flex gap-5 justify-center mb-8">
-        {tabbedProducts.map((item, index) => (
+        {tabList.map((item, index) => (
           <TabLink
-            key={item.tab}
-            isActive={item.tab === activeTab.tabName}
-            onClick={() => handleTabClick(item.tab, index)}
+            key={item.tabName}
+            isActive={item.tabName === activeTab.tabName}
+            onClick={() => handleTabClick(item.tabName, index)}
           >
-            {item.tab}
+            {item.tabName}
           </TabLink>
         ))}
       </div>
-      <ul className="grid grid-cols-3 gap-10">
-        {activeTabPane.items.map((item) => (
-          <ProductCard item={item} col={"grid-1"} key={item.tab} />
-        ))}
-      </ul>
+      <div>{ActiveTabPane}</div>
     </>
   );
 };
